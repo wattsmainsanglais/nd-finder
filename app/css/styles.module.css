@@ -1,0 +1,15 @@
+.flowerhunt{
+    display: flex;
+    justify-content: center;
+}
+
+.finders{
+    width:60%;
+    background-color: aqua;
+
+}
+
+.found{
+    width: 30%;
+    background-color: azure;
+}
