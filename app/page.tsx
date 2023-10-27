@@ -38,11 +38,11 @@ const [flowerPics, setflowerPics] = React.useState([lucerne_pic, figwort_pic])
 const onClickRemove = (index) => {
   const list = [...flowerPics];
   list.splice(index, 1);
-  
-  if(list.length === null){
-    setflowerPics([...list, congratulations])
-  }
   setflowerPics(list);
+  if(list.length === 0){
+    setflowerPics([list, congratulations])
+  }
+  
 }
 
 
