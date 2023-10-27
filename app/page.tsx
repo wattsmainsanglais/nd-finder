@@ -29,9 +29,21 @@ style={{
 }
 }/>
 
+const congratulations = <p>Congratulations</p>;
+
 const [flowerPics, setflowerPics] = React.useState([lucerne_pic, figwort_pic])
 
+// click event
 
+const onClickRemove = (index) => {
+  const list = [...flowerPics];
+  list.splice(index, 1);
+  
+  if(list.length === null){
+    setflowerPics([...list, congratulations])
+  }
+  setflowerPics(list);
+}
 
 
   return (
@@ -41,7 +53,7 @@ const [flowerPics, setflowerPics] = React.useState([lucerne_pic, figwort_pic])
       <section className={styles.flowerhunt}>
         <article className={styles.finders}>
           {flowerPics.map((item, index) => (
-            <aside key={index}>{item}</aside>
+            <aside key={index} onClick={() => onClickRemove(index)}>{item}</aside>
 
           ))
           }
