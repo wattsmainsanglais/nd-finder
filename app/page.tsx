@@ -40,7 +40,7 @@ const onClickRemove = (index) => {
   list.splice(index, 1);
   setflowerPics(list);
   if(list.length === 0){
-    setflowerPics([list, congratulations])
+    setflowerPics([...list, congratulations])
   }
   
 }
