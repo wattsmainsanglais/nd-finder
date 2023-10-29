@@ -31,19 +31,27 @@ style={{
 
 const congratulations = <p>Congratulations</p>;
 
-const [flowerPics, setflowerPics] = React.useState([lucerne_pic, figwort_pic])
+const [flowerPics, setflowerPics] = React.useState<any>([lucerne_pic, figwort_pic])
+const [foundPics, setFoundPics] = React.useState<any>([])
 
 // click event
 
-const onClickRemove = (index) => {
+const onClickRemove = (index, item) => {
   const list = [...flowerPics];
   list.splice(index, 1);
   setflowerPics(list);
+  setFoundPics([...foundPics, item])
   if(list.length === 0){
     setflowerPics([...list, congratulations])
   }
   
 }
+
+const reset = () => {
+  setFoundPics([])
+  setflowerPics([lucerne_pic, figwort_pic])
+}
+
 
 
   return (
@@ -53,7 +61,7 @@ const onClickRemove = (index) => {
       <section className={styles.flowerhunt}>
         <article className={styles.finders}>
           {flowerPics.map((item, index) => (
-            <aside key={index} onClick={() => onClickRemove(index)}>{item}</aside>
+            <aside key={index} onClick={() => onClickRemove(index, item)}>{item}</aside>
 
           ))
           }
@@ -61,9 +69,14 @@ const onClickRemove = (index) => {
         </article>
         <article className={styles.found}>
           <p>I've found some things</p>
+          {foundPics.map((item, index) => (
+            <aside key={index}>{item}</aside>
+          ) 
+          )}
         </article>
+       
       </section>
-
+      <button onClick={reset}>reset</button>
 
     </>
   )
