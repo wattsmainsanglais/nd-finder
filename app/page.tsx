@@ -6,37 +6,24 @@ import React from 'react'
 import figwort from '../public/images/figwort.jpg'
 import lucerne from '../public/images/lucerne.jpg'
 
+import images from './components/flowerList'
 
 
 
 export default function Home() {
 
-const figwort_pic = <Image 
-src={figwort}
-alt ='figwort picture'
-style={{
-  maxWidth: '20%',
-  height: 'auto',
-}
-}/>
 
-const lucerne_pic = <Image 
-src={lucerne}
-alt ='figwort picture'
-style={{
-  maxWidth: '20%',
-  height: 'auto',
-}
-}/>
+
+  //change to objects to align with Typescript (oop)
 
 const congratulations = <p>Congratulations</p>;
 
-const [flowerPics, setflowerPics] = React.useState<any>([lucerne_pic, figwort_pic])
-const [foundPics, setFoundPics] = React.useState<any>([])
+const [flowerPics, setflowerPics] = React.useState(images)
+const [foundPics, setFoundPics] = React.useState([])
 
 // click event
 
-const onClickRemove = (index, item) => {
+const onClickRemove = (item: any, index: number) => {
   const list = [...flowerPics];
   list.splice(index, 1);
   setflowerPics(list);
@@ -49,7 +36,7 @@ const onClickRemove = (index, item) => {
 
 const reset = () => {
   setFoundPics([])
-  setflowerPics([lucerne_pic, figwort_pic])
+  setflowerPics(images)
 }
 
 
@@ -60,8 +47,17 @@ const reset = () => {
 
       <section className={styles.flowerhunt}>
         <article className={styles.finders}>
-          {flowerPics.map((item, index) => (
-            <aside key={index} onClick={() => onClickRemove(index, item)}>{item}</aside>
+          {flowerPics.map((item: any, index: number) => (
+            <aside key={item} onClick={() => onClickRemove(item, index)}>
+              <Image 
+                src={item.src}
+                alt={item.alt}
+                style={{
+                  maxWidth: '20%',
+                  height: 'auto',
+                }}/>  
+              
+            </aside>
 
           ))
           }
@@ -69,8 +65,16 @@ const reset = () => {
         </article>
         <article className={styles.found}>
           <p>I've found some things</p>
-          {foundPics.map((item, index) => (
-            <aside key={index}>{item}</aside>
+          {foundPics.map((item: any, index: number) => (
+            <aside key={index}>
+              <Image 
+                src={item.src}
+                alt={item.alt}
+                style={{
+                  maxWidth: '20%',
+                  height: 'auto',
+                }}/>  
+            </aside>
           ) 
           )}
         </article>
