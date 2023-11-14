@@ -1,5 +1,5 @@
 
-import { Pool } from "pg"
+
 import React from 'react'
 
 import { prisma } from "../prisma";
@@ -22,7 +22,6 @@ import { prisma } from "../prisma";
                     
                 ))}</section>
 
-                <p>Is this going to work anytime soon?</p>
              
             </>
 

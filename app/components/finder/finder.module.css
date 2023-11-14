@@ -1,0 +1,7 @@
+/* Css module for finder.tsx */
+
+.finderQuestion{
+    
+    position: fixed;
+    width: 75%;
+}
