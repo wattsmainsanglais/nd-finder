@@ -14,9 +14,11 @@ const congratulations = <p>Congratulations</p>;
 
 const [flowerPics, setflowerPics] = React.useState(images)
 const [foundPics, setFoundPics] = React.useState([])
+const [clicked, setClicked] = React.useState([])
 
 const [showMe, setShowMe] = React.useState(false);
-  function toggle(){
+ 
+function toggle(){
     setShowMe(!showMe);
   }
 
@@ -24,10 +26,14 @@ const [showMe, setShowMe] = React.useState(false);
 
 const onClickRemove = (item: any, index: number) => {
 
-  toggle()
+  item.isClicked = true
+  setClicked([...clicked, item])
+  toggle();
   const list = [...flowerPics];
   list.splice(index, 1);
-  setflowerPics(list);
+  setflowerPics(list)
+ 
+ 
   setFoundPics([...foundPics, item])
   if(list.length === 0){
     setflowerPics([...list, congratulations])
@@ -50,7 +56,7 @@ const reset = () => {
         <article className={styles.finders}>
           {flowerPics.map((item: any, index: number) => (
            <section>
-            <aside key={item} onClick={() => onClickRemove(item, index)}>
+            <aside key={index} onClick={() => onClickRemove(item, index)}>
               <Image 
                 src={item.src}
                 alt={item.alt}
@@ -59,9 +65,7 @@ const reset = () => {
                   height: 'auto',
                 }}/>  
 
-                <div style={{display: showMe?"block":"none"}} >
-                  <Question question={item.question} one={item.one} two={item.two} three={item.three} />
-                </div>
+                
                 
                 
             </aside>
@@ -71,6 +75,22 @@ const reset = () => {
           }
           <p>lets find some things</p>
         </article>
+
+        <div style={{display: showMe?"block":"none"}} >
+              {clicked.map((item: any, index: number) => {
+                if(item.isClicked === true){
+                
+                  return (
+                    <aside key={index}>
+
+                      <Question question={item.question} one={item.one} two={item.two} three={item.three} />
+                    </aside>
+                     
+                  )
+                }
+              })}
+
+        </div>
        
         <article className={styles.found}>
           <p>I've found some things</p>
@@ -93,7 +113,7 @@ const reset = () => {
 
 
       <section>
-                
+          
       </section>
     </>
   )
