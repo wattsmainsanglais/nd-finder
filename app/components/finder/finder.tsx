@@ -33,7 +33,6 @@ const onClickRemove = (item: any, index: number) => {
   list.splice(index, 1);
   setflowerPics(list)
  
- 
   setFoundPics([...foundPics, item])
   if(list.length === 0){
     setflowerPics([...list, congratulations])
@@ -44,6 +43,7 @@ const onClickRemove = (item: any, index: number) => {
 const reset = () => {
   setFoundPics([])
   setflowerPics(images)
+  setClicked([])
 }
 
 
@@ -83,7 +83,7 @@ const reset = () => {
                   return (
                     <aside key={index}>
 
-                      <Question question={item.question} one={item.one} two={item.two} three={item.three} />
+                      <Question isactive={clicked[0]} question={item.question} one={item.one} two={item.two} three={item.three} />
                     </aside>
                      
                   )

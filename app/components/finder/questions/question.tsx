@@ -13,14 +13,15 @@ export interface UserProps {
   }
 
 
-export default function Question({question, one, two, three}: UserProps){
+export default function Question({question, one, two, three, isactive}: UserProps){
+
 
 
     return(
         <>
             <h2>{question}</h2>
             <ul>
-                <li>{one}</li>
+                <li>{one}<aside>{isactive.alt}</aside></li>
                 <li>{two}</li>
                 <li>{three}</li>
             </ul>
