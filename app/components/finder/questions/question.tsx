@@ -13,8 +13,12 @@ export interface UserProps {
   }
 
 
-export default function Question({question, one, two, three, isactive}: UserProps){
+export default function Question({handlesetFoundPics ,isactive, question, one, two, three, }: UserProps){
 
+    const answerQuestion = (e) => {
+
+
+    }
 
 
     return(
