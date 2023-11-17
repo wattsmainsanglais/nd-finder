@@ -39,10 +39,7 @@ const onClickRemove = (item: any, index: number) => {
   list.splice(index, 1);
   setflowerPics(list)
   toggleFindersArticle()
-  /*setFoundPics([...foundPics, item])
-  if(list.length === 0){
-    setflowerPics([...list, congratulations])
-  }*/
+ 
   
 }
 
