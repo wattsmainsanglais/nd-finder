@@ -31,14 +31,15 @@ function toggleFindersArticle(){
 // click event
 
 const onClickRemove = (item: any, index: number) => {
-
+  toggleFindersArticle()
+  toggleQuestionDiv();
   item.isClicked = true
   setClicked([...clicked, item])
-  toggleQuestionDiv();
+  
   const list = [...flowerPics];
   list.splice(index, 1);
   setflowerPics(list)
-  toggleFindersArticle()
+  
  
   
 }
