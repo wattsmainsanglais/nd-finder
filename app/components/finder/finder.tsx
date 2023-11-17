@@ -16,11 +16,17 @@ const [flowerPics, setflowerPics] = React.useState(images)
 const [foundPics, setFoundPics] = React.useState([])
 const [clicked, setClicked] = React.useState([])
 
-const [showMe, setShowMe] = React.useState(false);
+// Simple display states 
+const [showMeQuestion, setShowMeQuestion] = React.useState(false);
+const [showMeFlowers, setShowMeFlowers] = React.useState(true);
  
-function toggle(){
-    setShowMe(!showMe);
+function toggleQuestionDiv(){
+    setShowMeQuestion(!showMeQuestion);
   }
+
+function toggleFindersArticle(){
+  setShowMeFlowers(!showMeFlowers)
+}
 
 // click event
 
@@ -28,11 +34,11 @@ const onClickRemove = (item: any, index: number) => {
 
   item.isClicked = true
   setClicked([...clicked, item])
-  toggle();
+  toggleQuestionDiv();
   const list = [...flowerPics];
   list.splice(index, 1);
   setflowerPics(list)
- 
+  toggleFindersArticle()
   /*setFoundPics([...foundPics, item])
   if(list.length === 0){
     setflowerPics([...list, congratulations])
@@ -40,8 +46,20 @@ const onClickRemove = (item: any, index: number) => {
   
 }
 
-const handlesetFoundPics = (item) => {
-  setFoundPics(item);
+
+const handlesetFoundPics = (item, array) => {
+  
+  if(clicked[0].answer == item){
+    setFoundPics([...foundPics, array]);
+    
+    setClicked([])
+    toggleQuestionDiv()
+    toggleFindersArticle()
+  } else {
+    
+    return
+  }
+
 };
 
 const reset = () => {
@@ -57,7 +75,7 @@ const reset = () => {
     <h2>Nature Dopes</h2>
 
       <section className={styles.flowerhunt}>
-        <article className={styles.finders}>
+        <article className={styles.finders} style={{display: showMeFlowers? "block":"none"}} >
           {flowerPics.map((item: any, index: number) => (
            <section>
             <aside key={index} onClick={() => onClickRemove(item, index)}>
@@ -80,14 +98,14 @@ const reset = () => {
           <p>lets find some things</p>
         </article>
 
-        <div style={{display: showMe?"block":"none"}} >
+        <div style={{display: showMeQuestion?"block":"none"}} >
               {clicked.map((item: any, index: number) => {
                 if(item.isClicked === true){
                 
                   return (
                     <aside key={index}>
 
-                      <Question handlesetFoundPics={handlesetFoundPics} isactive={clicked[0]} question={item.question} one={item.one} two={item.two} three={item.three} />
+                      <Question handlesetFoundPics={handlesetFoundPics} isactive={clicked[0]} question={item.question} />
                     </aside>
                      
                   )

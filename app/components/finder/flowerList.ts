@@ -6,7 +6,7 @@ import bugloss from '../../../public/images/bugloss.jpg'
 
 
 
-let images: {name: string, src: any, alt: string, isClicked: boolean, style: {maxWidth: string, height: string }, question: string, one: string, two: string, three: string }[] = [
+let images: {name: string, src: any, alt: string, isClicked: boolean, style: {maxWidth: string, height: string }, question: string, answerlist: string[], answer: string }[] = [
         {
         name: 'figwort',
         src: figwort,
@@ -17,11 +17,8 @@ let images: {name: string, src: any, alt: string, isClicked: boolean, style: {ma
             height: 'auto',
             },
         question: 'What Color are the petals?',
-        
-        one: 'Red',
-        two: 'Blue',
-        three: 'Green'
-
+        answerlist: ['Red', 'Green', 'Blue'],
+        answer: 'Red'    
         },
         {
         name: 'lucerne',
@@ -33,10 +30,9 @@ let images: {name: string, src: any, alt: string, isClicked: boolean, style: {ma
             height: 'auto'
             },
         question: 'What Color is the stamen?',
-        one: 'Orange',
-        two: 'Black',
-        three: 'Green'
-                 
+        answerlist: ['Orange', 'Black', 'Green'],
+      
+        answer: 'Black'        
         }  
         ,
         {
@@ -49,10 +45,8 @@ let images: {name: string, src: any, alt: string, isClicked: boolean, style: {ma
                 height: 'auto'
                 }, 
             question: 'Is the Stem?', 
-            one: 'Hairy',
-            two: 'Ridged',
-            three: 'Square',
-                         
+            answerlist: ['Hairy', 'Ridged', 'Square'],
+            answer: 'Square'          
         }   
 
 

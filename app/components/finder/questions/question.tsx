@@ -13,21 +13,24 @@ export interface UserProps {
   }
 
 
-export default function Question({handlesetFoundPics ,isactive, question, one, two, three, }: UserProps){
+export default function Question({handlesetFoundPics ,isactive, question, }: UserProps){
 
     const answerQuestion = (e) => {
 
 
     }
 
+    let answerArray:string[] = isactive.answerlist;
 
     return(
         <>
             <h2>{question}</h2>
             <ul>
-                <li>{one}<aside>{isactive.alt}</aside></li>
-                <li>{two}</li>
-                <li>{three}</li>
+                {answerArray.map( (answer) => (
+                    <li onClick={() => handlesetFoundPics(answer, isactive)}>{answer}</li>
+                ))
+                
+                }
             </ul>
         
         
