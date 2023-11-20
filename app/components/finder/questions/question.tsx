@@ -2,13 +2,15 @@
 
 import React, { JSXElementConstructor } from 'react'
 
-import images from '../flowerList'
+import images, {imageArray} from '../flowerList'
+
+
 
 export interface UserProps {
-    question: string;
-    one: string;
-    two: string;
-    three: string;
+    handlesetFoundPics: Function,
+    isactive: imageArray,
+    question: string,
+ 
     
   }
 

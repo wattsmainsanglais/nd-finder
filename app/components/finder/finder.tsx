@@ -4,21 +4,24 @@ import styles from '../../css/styles.module.css'
 import finderStyles from './finder.module.css'
 import React, { JSXElementConstructor } from 'react'
 
-import images from './flowerList'
+import images, { imageArray } from './flowerList'
+
 import Question from './questions/question'
 
 
 export default function Finder(){
 
-const congratulations = <p>Congratulations</p>;
+
+
+
 
 const [flowerPics, setflowerPics] = React.useState(images)
-const [foundPics, setFoundPics] = React.useState([])
-const [clicked, setClicked] = React.useState([])
+const [foundPics, setFoundPics] = React.useState<imageArray[]>([])
+const [clicked, setClicked] = React.useState<imageArray[]>([])
 
 // Simple display states 
-const [showMeQuestion, setShowMeQuestion] = React.useState(false);
-const [showMeFlowers, setShowMeFlowers] = React.useState(true);
+const [showMeQuestion, setShowMeQuestion] = React.useState<boolean>(false);
+const [showMeFlowers, setShowMeFlowers] = React.useState<boolean>(true);
  
 function toggleQuestionDiv(){
     setShowMeQuestion(!showMeQuestion);
@@ -36,7 +39,7 @@ const onClickRemove = (item: any, index: number) => {
   item.isClicked = true
   setClicked([...clicked, item])
   
-  const list = [...flowerPics];
+  const list: imageArray[] = [...flowerPics];
   list.splice(index, 1);
   setflowerPics(list)
   
@@ -45,7 +48,7 @@ const onClickRemove = (item: any, index: number) => {
 }
 
 
-const handlesetFoundPics = (item, array) => {
+const handlesetFoundPics = (item: string, array: imageArray) => {
   
   if(clicked[0].answer == item){
     setFoundPics([...foundPics, array]);

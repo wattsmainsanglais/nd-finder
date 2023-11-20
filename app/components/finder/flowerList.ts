@@ -3,10 +3,23 @@
 import figwort from '../../../public/images/figwort.jpg'
 import lucerne from '../../../public/images/lucerne.jpg'
 import bugloss from '../../../public/images/bugloss.jpg'
+import { StaticImageData } from 'next/image'
 
 
+export type imageArray ={
+    name: string, 
+    src: StaticImageData, 
+    alt: string, 
+    isClicked: boolean, 
+    style: {maxWidth: string, height: string }, 
+    question: string, 
+    answerlist: string[], 
+    answer: string
 
-let images: {name: string, src: any, alt: string, isClicked: boolean, style: {maxWidth: string, height: string }, question: string, answerlist: string[], answer: string }[] = [
+}
+
+
+let images: imageArray[] = [
         {
         name: 'figwort',
         src: figwort,
