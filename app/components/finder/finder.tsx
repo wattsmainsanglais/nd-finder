@@ -7,21 +7,22 @@ import React, { JSXElementConstructor } from 'react'
 import images, { imageArray } from './flowerList'
 
 import Question from './questions/question'
+import Congratulations from './congratualtions/congratulations'
 
 
 export default function Finder(){
 
 
-
-
-
 const [flowerPics, setflowerPics] = React.useState(images)
 const [foundPics, setFoundPics] = React.useState<imageArray[]>([])
-const [clicked, setClicked] = React.useState<imageArray[]>([])
+const [clicked, setClicked] = React.useState<imageArray[]>([]) 
 
 // Simple display states 
 const [showMeQuestion, setShowMeQuestion] = React.useState<boolean>(false);
 const [showMeFlowers, setShowMeFlowers] = React.useState<boolean>(true);
+
+// Points State
+const [pointsTotal, setPointsTotal] = React.useState<number>(0)
  
 function toggleQuestionDiv(){
     setShowMeQuestion(!showMeQuestion);
@@ -54,6 +55,7 @@ const handlesetFoundPics = (item: string, array: imageArray) => {
     setFoundPics([...foundPics, array]);
     
     setClicked([])
+    setPointsTotal(pointsTotal + 1)
     toggleQuestionDiv()
     toggleFindersArticle()
   } else {
@@ -67,6 +69,7 @@ const reset = () => {
   setFoundPics([])
   setflowerPics(images)
   setClicked([])
+  setPointsTotal(0)
 }
 
 
@@ -136,7 +139,16 @@ const reset = () => {
 
 
       <section>
-          
+          { flowerPics.length == 0 && clicked.length == 0 ? (
+            <Congratulations points={pointsTotal} />
+           
+            
+          ) :
+          (
+             <></>
+          )
+             
+          }
       </section>
     </>
   )
