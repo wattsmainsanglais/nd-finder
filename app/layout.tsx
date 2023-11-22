@@ -2,8 +2,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Indie_Flower } from 'next/font/google'
 import './globals.css'
+import Image from 'next/image'
+import ndLogo from '../public/images/logomini.png'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+   weight: '800',
+   subsets: ['latin'] });
+
 const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
@@ -21,8 +26,28 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en"  className={indie.className}>
-      <body>{children}
+    <html lang="en">
+      <body>
+        <nav>
+          <section className={`${indie.className} '.logoWrapper' `}>
+            <aside >
+              <Image
+                src={ndLogo}
+                alt='Nature Dopes Logo, mini'
+                style={{  
+                  maxWidth: '100%',
+                  height: 'auto'
+                }} />
+              
+            </aside>
+            <h3>Nature Dopes</h3>
+          </section>
+          <section className={inter.className}>
+            <a>Main Site</a>
+          </section>
+
+        </nav>
+        {children}
       
       
       </body>

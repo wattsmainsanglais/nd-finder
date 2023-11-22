@@ -70,24 +70,26 @@ const reset = () => {
   setflowerPics(images)
   setClicked([])
   setPointsTotal(0)
+  setShowMeQuestion(false)
+  setShowMeFlowers(true)
 }
 
 
 
   return (
     <>
-    <h2>Nature Dopes</h2>
+
 
       <section className={styles.flowerhunt}>
         <article className={styles.finders} style={{display: showMeFlowers? "block":"none"}} >
           {flowerPics.map((item: any, index: number) => (
-           <section>
-            <aside key={index} onClick={() => onClickRemove(item, index)}>
+           
+            <aside className={finderStyles.flowerlistAside} key={index} onClick={() => onClickRemove(item, index)}>
               <Image 
                 src={item.src}
                 alt={item.alt}
                 style={{
-                  maxWidth: '20%',
+                  maxWidth: '100%',
                   height: 'auto',
                 }}/>  
 
@@ -96,7 +98,7 @@ const reset = () => {
                 
             </aside>
             
-          </section> 
+          
           ))
           }
           <p>lets find some things</p>
