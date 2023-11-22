@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Indie_Flower } from 'next/font/google'
+
 import './globals.css'
+import style from './layout.module.css'
+
 import Image from 'next/image'
 import ndLogo from '../public/images/logomini.png'
 
@@ -29,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <nav>
-          <section className={`${indie.className} '.logoWrapper' `}>
+          <section className={`${indie.className} ${style.logoWrapper} `}>
             <aside >
               <Image
                 src={ndLogo}
@@ -40,7 +43,7 @@ export default function RootLayout({
                 }} />
               
             </aside>
-            <h3>Nature Dopes</h3>
+            <h2>Nature Dopes</h2>
           </section>
           <section className={inter.className}>
             <a>Main Site</a>
