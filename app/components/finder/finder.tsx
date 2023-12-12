@@ -60,6 +60,7 @@ const handlesetFoundPics = (item: string, array: imageArray) => {
     toggleFindersArticle()
   } else {
     
+    
     return
   }
 
@@ -75,16 +76,15 @@ const reset = () => {
 }
 
 
-
   return (
     <>
 
 
       <section className={styles.flowerhunt}>
-        <article className={styles.finders} style={{display: showMeFlowers? "block":"none"}} >
+        <article className={showMeFlowers? styles.finders: styles.finders_alt} /**/ >
           {flowerPics.map((item: any, index: number) => (
            
-            <aside className={finderStyles.flowerlistAside} key={index} onClick={() => onClickRemove(item, index)}>
+            <aside className={finderStyles.flowerlistAside} key={index} style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}>
               <Image 
                 src={item.src}
                 alt={item.alt}
@@ -151,6 +151,9 @@ const reset = () => {
           )
              
           }
+      </section>
+      <section>
+          
       </section>
     </>
   )

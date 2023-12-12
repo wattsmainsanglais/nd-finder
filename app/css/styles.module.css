@@ -9,6 +9,12 @@
 
 }
 
+.finders_alt{
+    backdrop-filter: sepia(30%);
+    background-color: rgb(0, 255, 64);
+    width:10%;
+}
+
 .found{
     width: 30%;
     background-color: azure;

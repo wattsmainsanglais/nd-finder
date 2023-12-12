@@ -2,17 +2,20 @@
 
 import styles from './css/styles.module.css'
 import React, { JSXElementConstructor } from 'react'
-import Finder from './components/finder/finder'
 
+import Intro from './components/intro/intro'
 
 import PgData from './components/dataNdDatabase'
 
 
+
 export default function Home() {
+
 
 return(
 <>
-  <Finder />
+  <Intro />
+ 
 
 </>
 

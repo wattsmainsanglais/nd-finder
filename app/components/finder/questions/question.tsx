@@ -17,6 +17,7 @@ export interface UserProps {
 
 export default function Question({handlesetFoundPics ,isactive, question, }: UserProps){
 
+   
 
 
     let answerArray:string[] = isactive.answerlist;
@@ -36,3 +37,7 @@ export default function Question({handlesetFoundPics ,isactive, question, }: Use
         </>
     )
 }
+
+
+
+
