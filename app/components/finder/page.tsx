@@ -8,6 +8,7 @@ import images, { imageArray } from './flowerList'
 
 import Question from './questions/question'
 import Congratulations from './congratualtions/congratulations'
+import Link from 'next/link'
 
 
 export default function Finder(){
@@ -138,7 +139,7 @@ const reset = () => {
        
       </section>
       <button onClick={reset}>reset</button>
-
+      <Link href='/'>Start</Link>
 
       <section>
           { flowerPics.length == 0 && clicked.length == 0 ? (
