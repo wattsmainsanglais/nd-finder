@@ -1,18 +1,17 @@
-import ndLogo from '../public/images/logomini.png'
-import Image from 'next/image'
+
+import LoadingIcon from './components/finder/loadingIcon'
+
 import styles from './layout.module.css'
 
 export default function Loading(){
       return( 
         <section className={styles.loadingWrapper}>
+          
+          <LoadingIcon/>
 
-          <Image
-            src={ndLogo}
-            alt='Nature Dopes Logo, mini'
-            style={{  
-            maxWidth: '50%',
-            height: 'auto'
-                }} />
+         
+          
+          
         </section>
       )
 }
