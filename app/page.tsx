@@ -1,28 +1,44 @@
-'use client'
+
 
 import styles from './layout.module.css'
 import React, { JSXElementConstructor } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import {motion} from 'framer-motion'
+import ndLogo from '../public/images/logomini.png'
+import { Indie_Flower } from 'next/font/google'
+
 
 import { Fade } from 'react-awesome-reveal'
 
+export const indie = Indie_Flower({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-indie'
+})
 
-import ndLogo from '../public/images/logomini.png'
-
-import PgData from './components/dataNdDatabase'
 
 
 
 export default function Page() {
    
-  
-
-
 return(
-<>
-    <section>
+<main className={styles.rootPageWrapper}> 
+
+    <section className={`${indie.className} ${styles.logoWrapper} `}>
+            <aside >
+              <Image
+                src={ndLogo}
+                alt='Nature Dopes Logo, mini'
+                style={{  
+                  maxWidth: '100%',
+                  height: 'auto'
+                }} />
+              
+            </aside>
+            <h2>Nature Dopes</h2>
+    </section>
+
+    <section className={` ${styles.rootPageSection} ${indie.className}`}>
         <h1> Welcome to the Nature Dopes mini-game 'Flower & Seek'</h1>
         <h2> While you're out in Nature, see if you can find each flower then answer a question for each</h2>
         <h3>Click the Go button to begin </h3>
@@ -33,7 +49,7 @@ return(
     </section>
    
         
-  </>
+</main>
  
  
 )

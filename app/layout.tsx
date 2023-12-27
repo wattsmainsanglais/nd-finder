@@ -12,7 +12,7 @@ const inter = Inter({
    weight: '800',
    subsets: ['latin'] });
 
-const indie = Indie_Flower({
+export const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-indie'
@@ -32,19 +32,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <nav>
-          <section className={`${indie.className} ${style.logoWrapper} `}>
-            <aside >
-              <Image
-                src={ndLogo}
-                alt='Nature Dopes Logo, mini'
-                style={{  
-                  maxWidth: '100%',
-                  height: 'auto'
-                }} />
-              
-            </aside>
-            <h2>Nature Dopes</h2>
-          </section>
           <section className={inter.className}>
             <a>Main Site</a>
           </section>
