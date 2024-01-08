@@ -94,11 +94,11 @@ const reset = () => {
                 alt={item.alt}
                 className={finderStyles.flowerhuntImage}
                 style={{
-                  maxWidth: '85%',
+                  maxWidth: '90%',
                   height: 'auto',
                 }}/>  
 
-                <p>{item.name}</p>
+                <p style={{textAlign: 'center'}}>{item.name}</p>
                 
             </aside>
            </Slide>
