@@ -26,6 +26,10 @@ nav{
 
 }
 
+nav > section {
+  margin-right: 2%;
+}
+
 
 
 

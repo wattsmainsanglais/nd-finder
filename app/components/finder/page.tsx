@@ -10,6 +10,8 @@ import Question from './questions/question'
 import Congratulations from './congratualtions/congratulations'
 import Link from 'next/link'
 
+import { Slide } from 'react-awesome-reveal'
+
 
 export default function Finder(){
 
@@ -82,23 +84,24 @@ const reset = () => {
 
 
       <section className={styles.flowerhunt}>
-        <article className={showMeFlowers? styles.finders: styles.finders_alt} /**/ >
+        <article className={showMeFlowers? finderStyles.finders: finderStyles.finders_alt} /**/ >
           {flowerPics.map((item: any, index: number) => (
            
-            <aside className={finderStyles.flowerlistAside} key={index} style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}>
+           <Slide className={finderStyles.flowerlistAside}>
+            <aside key={index} style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}>
               <Image 
                 src={item.src}
                 alt={item.alt}
+                className={finderStyles.flowerhuntImage}
                 style={{
-                  maxWidth: '100%',
+                  maxWidth: '85%',
                   height: 'auto',
                 }}/>  
 
-                
-                
+                <p>{item.name}</p>
                 
             </aside>
-            
+           </Slide>
           
           ))
           }
@@ -121,7 +124,7 @@ const reset = () => {
 
         </div>
        
-        <article className={styles.found}>
+        <article className={finderStyles.found}>
           <p>I've found some things</p>
           {foundPics.map((item: any, index: number) => (
             <aside key={index}>
@@ -129,7 +132,7 @@ const reset = () => {
                 src={item.src}
                 alt={item.alt}
                 style={{
-                  maxWidth: '20%',
+                  maxWidth: '90%',
                   height: 'auto',
                 }}/>  
             </aside>

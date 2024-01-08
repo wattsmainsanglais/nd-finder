@@ -40,8 +40,8 @@ return(
 
     <section className={` ${styles.rootPageSection} ${indie.className}`}>
         <h1> Welcome to the Nature Dopes mini-game 'Flower & Seek'</h1>
-        <h2> While you're out in Nature, see if you can find each flower then answer a question for each</h2>
-        <h3>Click the Go button to begin </h3>
+        <h2> <br /> While you're out in Nature, see if you can find each flower then answer a question for each</h2>
+        <h3> <br /> Click the Go button to begin </h3>
         <Link href="/components/finder">Go!</Link>
           
       

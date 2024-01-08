@@ -3,10 +3,7 @@ import { Inter } from 'next/font/google'
 import { Indie_Flower } from 'next/font/google'
 
 import './globals.css'
-import style from './layout.module.css'
 
-import Image from 'next/image'
-import ndLogo from '../public/images/logomini.png'
 
 const inter = Inter({
    weight: '800',

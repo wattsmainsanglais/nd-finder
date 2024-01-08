@@ -3,22 +3,7 @@
     justify-content: center;
 }
 
-.finders{
-    width:60%;
-    background-color: aqua;
 
-}
-
-.finders_alt{
-    backdrop-filter: sepia(30%);
-    background-color: rgb(0, 255, 64);
-    width:10%;
-}
-
-.found{
-    width: 30%;
-    background-color: azure;
-}
 
 .loadingWrapper{
     width: 100%;
