@@ -87,8 +87,8 @@ const reset = () => {
         <article className={showMeFlowers? finderStyles.finders: finderStyles.finders_alt} /**/ >
           {flowerPics.map((item: any, index: number) => (
            
-           <Slide className={finderStyles.flowerlistAside}>
-            <aside key={index} style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}>
+           <Slide className={finderStyles.flowerlistAside} key={index}>
+            <aside  style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}>
               <Image 
                 src={item.src}
                 alt={item.alt}

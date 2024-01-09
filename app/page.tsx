@@ -6,9 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ndLogo from '../public/images/logomini.png'
 import { Indie_Flower } from 'next/font/google'
+import GoButton from './components/buttons/GoButton'
 
-
-import { Fade } from 'react-awesome-reveal'
 
 export const indie = Indie_Flower({
   weight: '400',
@@ -39,10 +38,13 @@ return(
     </section>
 
     <section className={` ${styles.rootPageSection} ${indie.className}`}>
-        <h1> Welcome to the Nature Dopes mini-game 'Flower & Seek'</h1>
+        <h1> Welcome to the Nature Dopes mini-game <span style={{color: '#5B9240', fontWeight: '800'}}>'Flower & Seek'</span></h1>
         <h2> <br /> While you're out in Nature, see if you can find each flower then answer a question for each</h2>
         <h3> <br /> Click the Go button to begin </h3>
-        <Link href="/components/finder">Go!</Link>
+        
+        <GoButton/>
+       
+          
           
       
     
