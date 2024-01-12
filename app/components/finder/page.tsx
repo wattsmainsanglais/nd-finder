@@ -101,14 +101,7 @@ const reset = () => {
                 <p style={{textAlign: 'center'}}>{item.name}</p>
                 
             </aside>
-           </Slide>
-          
-          ))
-          }
-          <p>lets find some things</p>
-        </article>
-
-        <div style={{display: showMeQuestion?"block":"none"}} >
+            <div style={{display: showMeQuestion?"block":"none"}} >
               {clicked.map((item: any, index: number) => {
                 if(item.isClicked === true){
                 
@@ -122,7 +115,15 @@ const reset = () => {
                 }
               })}
 
-        </div>
+            </div>
+           </Slide>
+          
+          ))
+          }
+          <p>lets find some things</p>
+        </article>
+
+       
        
         <article className={finderStyles.found}>
           <p>I've found some things</p>

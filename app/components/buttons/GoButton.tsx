@@ -8,17 +8,23 @@ import Link from "next/link";
 export default function GoButton(){
    
    return(
-    <motion.button
+    
+      <motion.button
         className='goButton'
-        style={{backgroundColor: '#5B9240', width: '5%', borderRadius: '2px'}}
+        style={{backgroundColor: '#5B9240', width: '100%', borderRadius: '2px'}}
         whileHover={{
-        scale: 1.2,
-        transition: { duration: 1 },
-      }}
-        whileTap={{ scale: 0.9 }}>
+          scale: 1.2,
+          transition: { duration: 1 },
+          backgroundColor: '#99d37d'
+        }}
+        whileTap={{ 
+          scale: 0.9,
+          backgroundColor: '#ffffff',
+          color: '#5B9240'
+         }}>Go!
 
-        <Link href="../components/finder">Go!</Link>
+        
 
-    </motion.button>
-
+      </motion.button>
+    
 )}

@@ -41,9 +41,9 @@ return(
         <h1> Welcome to the Nature Dopes mini-game <span style={{color: '#5B9240', fontWeight: '800'}}>'Flower & Seek'</span></h1>
         <h2> <br /> While you're out in Nature, see if you can find each flower then answer a question for each</h2>
         <h3> <br /> Click the Go button to begin </h3>
-        
-        <GoButton/>
-       
+        <Link className={styles.finderLink} href="../components/finder">
+          <GoButton/>
+        </Link>
           
           
       
