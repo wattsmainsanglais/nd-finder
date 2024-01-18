@@ -11,6 +11,7 @@ import Congratulations from './congratualtions/congratulations'
 import Link from 'next/link'
 
 import { Slide } from 'react-awesome-reveal'
+import {AnimatePresence, motion} from 'framer-motion'
 
 
 export default function Finder(){
@@ -86,9 +87,14 @@ const reset = () => {
       <section className={styles.flowerhunt}>
         <article className={showMeFlowers? finderStyles.finders: finderStyles.finders_alt} /**/ >
           {flowerPics.map((item: any, index: number) => (
+           <AnimatePresence>
+            {showMeFlowers && (
            
-           <Slide className={finderStyles.flowerlistAside} key={index}>
-            <aside  style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}>
+            <motion.div className={finderStyles.flowerlistAside} style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}
+              key={index}
+              initial={{ x: -300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}>
               <Image 
                 src={item.src}
                 alt={item.alt}
@@ -100,7 +106,14 @@ const reset = () => {
 
                 <p style={{textAlign: 'center'}}>{item.name}</p>
                 
-            </aside>
+            </motion.div>
+      
+           
+           )}
+           </AnimatePresence>
+          ))
+          }
+
             <div style={{display: showMeQuestion?"block":"none"}} >
               {clicked.map((item: any, index: number) => {
                 if(item.isClicked === true){
@@ -116,10 +129,7 @@ const reset = () => {
               })}
 
             </div>
-           </Slide>
-          
-          ))
-          }
+
           <p>lets find some things</p>
         </article>
 
