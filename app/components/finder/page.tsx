@@ -10,9 +10,8 @@ import Question from './questions/question'
 import Congratulations from './congratualtions/congratulations'
 import Link from 'next/link'
 
-import { Slide } from 'react-awesome-reveal'
-import {AnimatePresence, motion} from 'framer-motion'
-
+import {AnimatePresence, motion, useInView} from 'framer-motion'
+import { useRef } from 'react'
 
 export default function Finder(){
 
@@ -28,6 +27,8 @@ const [showMeFlowers, setShowMeFlowers] = React.useState<boolean>(true);
 // Points State
 const [pointsTotal, setPointsTotal] = React.useState<number>(0)
  
+
+
 function toggleQuestionDiv(){
     setShowMeQuestion(!showMeQuestion);
   }
@@ -85,16 +86,22 @@ const reset = () => {
 
 
       <section className={styles.flowerhunt}>
-        <article className={showMeFlowers? finderStyles.finders: finderStyles.finders_alt} /**/ >
+        <article  className={finderStyles.finders} /**/ >
+
           {flowerPics.map((item: any, index: number) => (
+
            <AnimatePresence>
             {showMeFlowers && (
            
             <motion.div className={finderStyles.flowerlistAside} style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}
+              whileInView={{ x: 0}}
+            
               key={index}
               initial={{ x: -300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -300, opacity: 0 }}>
+              animate={{ x: -200, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              
+              >
               <Image 
                 src={item.src}
                 alt={item.alt}
@@ -114,11 +121,23 @@ const reset = () => {
           ))
           }
 
-            <div style={{display: showMeQuestion?"block":"none"}} >
+
+          <AnimatePresence>
+            {showMeQuestion && (
+
+            <motion.div className={finderStyles.flowerlistAside} style={{display: showMeQuestion?"block":"none", minHeight: '400px'}} 
+              key='div'
+              initial={{ y: 800, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -800, opacity: .1 }}
+              transition={{duration: .5 }}>
+                
               {clicked.map((item: any, index: number) => {
                 if(item.isClicked === true){
                 
                   return (
+
+                    
                     <aside key={index}>
 
                       <Question handlesetFoundPics={handlesetFoundPics} isactive={clicked[0]} question={item.question} />
@@ -128,13 +147,18 @@ const reset = () => {
                 }
               })}
 
-            </div>
+            </motion.div>
+          )}
+          </AnimatePresence>
+          
 
+
+         
           <p>lets find some things</p>
         </article>
 
-       
-       
+     
+  {/*
         <article className={finderStyles.found}>
           <p>I've found some things</p>
           {foundPics.map((item: any, index: number) => (
@@ -150,7 +174,7 @@ const reset = () => {
           ) 
           )}
         </article>
-       
+    */}   
       </section>
       <button onClick={reset}>reset</button>
       <Link href='/'>Start</Link>
