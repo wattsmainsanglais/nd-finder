@@ -12,7 +12,7 @@ import GoButton from './components/buttons/GoButton'
 export const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-indie'
+  
 })
 
 
