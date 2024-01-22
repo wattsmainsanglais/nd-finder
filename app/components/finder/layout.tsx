@@ -11,10 +11,10 @@ const inter = Inter({
    weight: '800',
    subsets: ['latin'] });
 
-export const indie = Indie_Flower({
+const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-indie'
+  
 })
 
 export default function FinderLayout({ 
@@ -24,8 +24,8 @@ export default function FinderLayout({
 }) {
     return (
         <>
-            <header className={style.finderHeader}>
-                <section className={`${indie.className} ${style.logoWrapper} `}>
+            <header className={indie.className}>
+                <section className={`${style.finderHeader} ${style.logoWrapper} `}>
                 <aside >
                 <Image
                     src={ndLogo}
@@ -36,7 +36,7 @@ export default function FinderLayout({
                     }} />
                 
                 </aside>
-                <h2>Nature Dopes</h2>
+                <h2 className={style.navBarHeader}>Nature Dopes</h2>
                 </section>
             
             </header>

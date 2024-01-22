@@ -11,7 +11,7 @@ import Congratulations from './congratualtions/congratulations'
 import Link from 'next/link'
 
 import {AnimatePresence, motion, useInView} from 'framer-motion'
-import { useRef } from 'react'
+
 
 export default function Finder(){
 
@@ -100,7 +100,7 @@ const reset = () => {
               initial={{ x: -300, opacity: 0 }}
               animate={{ x: -200, opacity: 1 }}
               exit={{ x: -300, opacity: 0 }}
-              
+              transition={{duration: .5}}
               >
               <Image 
                 src={item.src}
@@ -126,10 +126,10 @@ const reset = () => {
             {showMeQuestion && (
 
             <motion.div className={finderStyles.flowerlistAside} style={{display: showMeQuestion?"block":"none", minHeight: '400px'}} 
-              key='div'
-              initial={{ y: 800, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -800, opacity: .1 }}
+              key='modal'
+              initial={{ x: 800, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 800, opacity: .1 }}
               transition={{duration: .5 }}>
                 
               {clicked.map((item: any, index: number) => {
