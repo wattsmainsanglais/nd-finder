@@ -13,7 +13,7 @@
 .logoWrapper{
     font-size: 1.4em;
     padding-left: 1%;
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
   }
@@ -55,15 +55,21 @@
 
 /* css for 'Flowerhunt' section  */
 
+.flowerhunt{
+  height: 50vh;
+  background-color: #cdeebc;
+}
+
 .finders{
   width:60%;
+  min-height: 100vh;
   background-color: #cdeebc;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  padding-top: 4%;
+  padding-bottom: 5%;
+  padding-top: 5%;
 }
 
 .finders_alt{
@@ -83,6 +89,7 @@
   justify-content: center;
   align-items: center;
   width: 40%;
+  
   margin-bottom: 3%;
   background-color: azure;
   
@@ -95,6 +102,21 @@
 
 .flowerhuntImage{
   margin: 5% 5%;
+}
+
+/* Question wrapper */
+
+.questionModal{
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin-bottom: 3%;
+  background-color: azure;
+
 }
 
 

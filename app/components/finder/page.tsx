@@ -125,7 +125,7 @@ const reset = () => {
           <AnimatePresence>
             {showMeQuestion && (
 
-            <motion.div className={finderStyles.flowerlistAside} style={{display: showMeQuestion?"block":"none", minHeight: '400px'}} 
+            <motion.div className={finderStyles.questionModal} style={{display: showMeQuestion?"block":"none", minHeight: '400px'}} 
               key='modal'
               initial={{ x: 800, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
