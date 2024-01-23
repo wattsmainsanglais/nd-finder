@@ -81,11 +81,11 @@ const reset = () => {
 }
 
 
-  return (
+  return (    
     <>
 
 
-      <section className={styles.flowerhunt}>
+      <section className={finderStyles.flowerhunt}>
         <article  className={finderStyles.finders} /**/ >
 
           {flowerPics.map((item: any, index: number) => (

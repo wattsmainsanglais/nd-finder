@@ -56,8 +56,9 @@
 /* css for 'Flowerhunt' section  */
 
 .flowerhunt{
-  height: 50vh;
-  background-color: #cdeebc;
+  display: flex;
+  justify-content: center;
+ 
 }
 
 .finders{
