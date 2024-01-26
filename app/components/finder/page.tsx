@@ -86,6 +86,25 @@ const reset = () => {
 
 
       <section className={finderStyles.flowerhunt}>
+
+        <article className={finderStyles.found} style={{display: foundPics.length > 0 ? "flex":"none" }}>
+            <p>Found... </p>
+            {foundPics.map((item: any, index: number) => (
+              <aside key={index} className={finderStyles.foundAside}>
+                <Image 
+                  src={item.src}
+                  alt={item.alt}
+                  style={{
+                    maxWidth: '15%',
+                    height: 'auto',
+                  }}/>  
+              </aside>
+            ) 
+            )}
+          </article>
+
+
+
         <article  className={finderStyles.finders} /**/ >
 
           {flowerPics.map((item: any, index: number) => (
@@ -157,24 +176,7 @@ const reset = () => {
           <p>lets find some things</p>
         </article>
 
-     
-  {/*
-        <article className={finderStyles.found}>
-          <p>I've found some things</p>
-          {foundPics.map((item: any, index: number) => (
-            <aside key={index}>
-              <Image 
-                src={item.src}
-                alt={item.alt}
-                style={{
-                  maxWidth: '90%',
-                  height: 'auto',
-                }}/>  
-            </aside>
-          ) 
-          )}
-        </article>
-    */}   
+      
       </section>
       <button onClick={reset}>reset</button>
       <Link href='/'>Start</Link>

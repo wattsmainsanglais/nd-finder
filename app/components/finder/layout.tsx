@@ -24,9 +24,9 @@ export default function FinderLayout({
 }) {
     return (
         <>
-            <header className={indie.className}>
-                <section className={`${style.finderHeader} ${style.logoWrapper} `}>
-                <aside >
+            <header className={`${indie.className} ${style.header}`}>
+                <section className={style.finderHeader}>
+                <aside className={style.logoWrapper} >
                 <Image
                     src={ndLogo}
                     alt='Nature Dopes Logo, mini'
