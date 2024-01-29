@@ -88,19 +88,24 @@ const reset = () => {
       <section className={finderStyles.flowerhunt}>
 
         <article className={finderStyles.found} style={{display: foundPics.length > 0 ? "flex":"none" }}>
-            <p>Found... </p>
-            {foundPics.map((item: any, index: number) => (
-              <aside key={index} className={finderStyles.foundAside}>
-                <Image 
-                  src={item.src}
-                  alt={item.alt}
-                  style={{
-                    maxWidth: '15%',
-                    height: 'auto',
-                  }}/>  
-              </aside>
-            ) 
-            )}
+            <div className={finderStyles.foundWrapper}>
+              <p>Found... </p>
+              {foundPics.map((item: any, index: number) => (
+               <AnimatePresence key={index}>
+                <aside key={index} className={finderStyles.foundAside}>
+                  <Image 
+                    src={item.src}
+                    alt={item.alt}
+                    style={{
+                      maxWidth: '30px',
+                      maxHeight: '40px',
+                      height: 'auto',
+                    }}/>  
+                </aside>
+                </AnimatePresence> 
+              ) 
+              )}
+            </div>
           </article>
 
 
@@ -109,13 +114,13 @@ const reset = () => {
 
           {flowerPics.map((item: any, index: number) => (
 
-           <AnimatePresence>
+           <AnimatePresence key={index}>
             {showMeFlowers && (
            
             <motion.div className={finderStyles.flowerlistAside} style={{display: showMeFlowers? "block":"none"}} onClick={() => onClickRemove(item, index)}
               whileInView={{ x: 0}}
             
-              key={index}
+              
               initial={{ x: -300, opacity: 0 }}
               animate={{ x: -200, opacity: 1 }}
               exit={{ x: -300, opacity: 0 }}

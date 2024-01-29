@@ -64,25 +64,31 @@
 }
 
 .found{
-  width: 100%;
+  width: 60%;
   background-color: #cdeebc;
   display: flex;
   justify-content: flex-end;
 }
 
+.foundWrapper{
+  background-color: azure;
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
 .foundAside{
-background-color: azure;
- width: 30%;
- display: flex;
- justify-content: flex-end;
- flex-wrap: nowrap;
- padding-right: 2%;
+ padding-right: 1%;
+ 
+ 
+
 }
 
 
 /* css for 'Flowerhunt' section  */
 
-
+ 
 
 .finders{
   width:60%;
