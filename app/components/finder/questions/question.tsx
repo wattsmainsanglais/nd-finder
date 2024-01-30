@@ -4,7 +4,7 @@ import React, { JSXElementConstructor } from 'react'
 
 import images, {imageArray} from '../flowerList'
 import styles from './question.module.css'
-
+import { indie } from '../layout';
 
 export interface UserProps {
     handlesetFoundPics: Function,
@@ -23,7 +23,7 @@ export default function Question({handlesetFoundPics ,isactive, question, }: Use
     let answerArray:string[] = isactive.answerlist;
 
     return(
-        <section className={styles.questionWrapper}>
+        <section className={`${styles.questionWrapper} ${indie.className}`}>
             <h2>{question}</h2>
             
             <ul className={styles.answersList}>

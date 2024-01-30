@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    font-size: 1.2em;
 
 }
 
@@ -16,6 +17,7 @@
 .answerEntry {
     margin: 1%;
     border: 2px #5B9240 solid;
+    border-radius: 5px;
     padding: 5%;
     width: 100%;
     display: flex;

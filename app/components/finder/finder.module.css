@@ -124,6 +124,7 @@
 .flowerlistAside:hover{
   opacity: 85%;
   border: 2px solid #5B9240;
+  border-radius: 5px;
 }
 
 .flowerhuntImage{
@@ -144,6 +145,7 @@
   margin-bottom: 3%;
   background-color: azure;
   border: #5B9240 solid 2px;
+  border-radius: 5px;
 
 }
 
