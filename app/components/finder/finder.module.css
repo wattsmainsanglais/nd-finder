@@ -206,4 +206,9 @@ justify-content: center;
   width: 70%;
 }
 
+.questionModal{
+  width: 70%;
+  left: 15%;
+}
+
 }
