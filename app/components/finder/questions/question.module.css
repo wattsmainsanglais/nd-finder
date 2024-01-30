@@ -1,0 +1,28 @@
+.questionWrapper{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.answersList{
+    width: 80%;
+    padding: 3%;
+}
+
+.answerEntry {
+    margin: 1%;
+    border: 2px #5B9240 solid;
+    padding: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.answerEntry:hover{
+    border: 4px #5B9240 solid;
+    background-color: azure;
+}

@@ -1,6 +1,6 @@
 
 
-import figwort from '../../../public/images/figwort.jpg'
+import toadflax from '../../../public/images/toadflax.jpg'
 import lucerne from '../../../public/images/lucerne.jpg'
 import bugloss from '../../../public/images/bugloss.jpg'
 import { StaticImageData } from 'next/image'
@@ -8,6 +8,7 @@ import { StaticImageData } from 'next/image'
 
 export type imageArray ={
     name: string, 
+    nameSci: string,
     src: StaticImageData, 
     alt: string, 
     isClicked: boolean, 
@@ -21,20 +22,22 @@ export type imageArray ={
 
 let images: imageArray[] = [
         {
-        name: 'figwort',
-        src: figwort,
-        alt: 'Picture of a figwort',
+        name: 'Toadflax',
+        nameSci: 'Linaria vulgaris',
+        src: toadflax,
+        alt: 'Picture of a toadflax',
         isClicked: false,
         style: {
             maxWidth: '20%',
             height: 'auto',
             },
         question: 'What Color are the petals?',
-        answerlist: ['Red', 'Green', 'Blue'],
-        answer: 'Red'    
+        answerlist: ['Yellow', 'Green', 'Blue'],
+        answer: 'Yellow'    
         },
         {
-        name: 'lucerne',
+        name: 'Lucerne',
+        nameSci: 'Medicago Sativa',
         src: lucerne,
         alt: 'Picture of a lucerne',
         isClicked: false,
@@ -49,7 +52,8 @@ let images: imageArray[] = [
         }  
         ,
         {
-           name: 'bugloss',
+           name: "Viper's Bugloss",
+           nameSci: 'Echium Vulgare',
             src: bugloss,
             alt: 'Picture of a Vipers bugloss',
             isClicked: false,

@@ -13,6 +13,7 @@ import Link from 'next/link'
 import {AnimatePresence, motion, useInView} from 'framer-motion'
 
 import { indie } from './layout'
+import PgData from '../dataNdDatabase'
 
 export default function Finder(){
 
@@ -141,6 +142,7 @@ const reset = () => {
                 }}/>  
 
                 <p style={{textAlign: 'center'}}>{item.name}</p>
+                <p style={{textAlign: 'center', fontSize: '0.8em'}}>({item.nameSci})</p>
                 
             </motion.div>
       
@@ -154,7 +156,7 @@ const reset = () => {
           <AnimatePresence>
             {showMeQuestion && (
 
-            <motion.div className={finderStyles.questionModal} style={{display: showMeQuestion?"block":"none", minHeight: '400px'}} 
+            <motion.div className={finderStyles.questionModal} style={{display: showMeQuestion?"flex":"none", minHeight: '400px', alignItems: 'center'}} 
               key='modal'
               initial={{ x: 800, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -167,7 +169,7 @@ const reset = () => {
                   return (
 
                     
-                    <aside key={index}>
+                    <aside className={finderStyles.questionAside} key={index}>
 
                       <Question handlesetFoundPics={handlesetFoundPics} isactive={clicked[0]} question={item.question} />
                     </aside>
@@ -203,9 +205,7 @@ const reset = () => {
              
           }
       </section>
-      <section>
-          
-      </section>
+     
     </>
   )
 }

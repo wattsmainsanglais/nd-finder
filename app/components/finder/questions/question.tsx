@@ -3,7 +3,7 @@
 import React, { JSXElementConstructor } from 'react'
 
 import images, {imageArray} from '../flowerList'
-
+import styles from './question.module.css'
 
 
 export interface UserProps {
@@ -23,18 +23,19 @@ export default function Question({handlesetFoundPics ,isactive, question, }: Use
     let answerArray:string[] = isactive.answerlist;
 
     return(
-        <>
+        <section className={styles.questionWrapper}>
             <h2>{question}</h2>
-            <ul>
+            
+            <ul className={styles.answersList}>
                 {answerArray.map( (answer, index) => (
-                    <li key={index} onClick={() => handlesetFoundPics(answer, isactive)}>{answer}</li>
+                    <li className={styles.answerEntry} key={index} onClick={() => handlesetFoundPics(answer, isactive)}>{answer}</li>
                 ))
                 
                 }
             </ul>
+        </section>
         
         
-        </>
     )
 }
 

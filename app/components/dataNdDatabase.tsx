@@ -6,16 +6,15 @@ import { prisma } from "../prisma";
 
   export default async function PgData(){
     
-  let imagelist = await prisma.images.findMany();
+  let userlist = await prisma.users.findMany();
 
         return(
-
             <>
                 <section>
-                    {imagelist.map(image => (
+                    {userlist.map(user => (
                   
                     
-                    <p key={image.id}>{image.species_name}</p>
+                    <p key={user.id}>{user.username}</p>
                     
                 
                     
