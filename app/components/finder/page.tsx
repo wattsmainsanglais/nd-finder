@@ -12,6 +12,7 @@ import Link from 'next/link'
 
 import {AnimatePresence, motion, useInView} from 'framer-motion'
 
+import { indie } from './layout'
 
 export default function Finder(){
 
@@ -80,29 +81,33 @@ const reset = () => {
   setShowMeFlowers(true)
 }
 
-
+    // rememeber, maybe at end of game, add facts for questions answered incorrectly. would need new incorrect state
   return (    
     <>
 
 
       <section className={finderStyles.flowerhunt}>
 
-        <article className={finderStyles.found} style={{display: foundPics.length > 0 ? "flex":"none" }}>
-            <div className={finderStyles.foundWrapper}>
-              <p>Found... </p>
+        <article className={finderStyles.found}>
+            <div className={finderStyles.foundWrapper} style={{opacity: foundPics.length > 0 ? 1:0 }}>
+              <p className={`${finderStyles.foundP} ${indie.className}`}>Found... </p>
               {foundPics.map((item: any, index: number) => (
-               <AnimatePresence key={index}>
-                <aside key={index} className={finderStyles.foundAside}>
-                  <Image 
-                    src={item.src}
-                    alt={item.alt}
-                    style={{
-                      maxWidth: '30px',
-                      maxHeight: '40px',
-                      height: 'auto',
-                    }}/>  
-                </aside>
-                </AnimatePresence> 
+               
+                <motion.aside key={index} className={finderStyles.foundAside}
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{duration: .8}}>
+
+                    <Image 
+                      src={item.src}
+                      alt={item.alt}
+                      style={{
+                        maxWidth: '30px',
+                        maxHeight: '40px',
+                        height: 'auto',
+                      }}/>  
+                </motion.aside>
+                
               ) 
               )}
             </div>

@@ -11,7 +11,7 @@ const inter = Inter({
    weight: '800',
    subsets: ['latin'] });
 
-const indie = Indie_Flower({
+export const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
   

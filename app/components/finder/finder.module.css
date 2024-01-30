@@ -68,6 +68,7 @@
   background-color: #cdeebc;
   display: flex;
   justify-content: flex-end;
+  
 }
 
 .foundWrapper{
@@ -81,8 +82,12 @@
 .foundAside{
  padding-right: 1%;
  
- 
+}
 
+.foundP{
+  color: #5B9240;
+  text-align: center;
+  padding: 2%;
 }
 
 
@@ -99,7 +104,7 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 5%;
-  padding-top: 5%;
+  padding-top: 2%;
 }
 
 .finders_alt{
@@ -138,6 +143,7 @@
 
 .questionModal{
   position: absolute;
+  
   top: 30%;
   left: 30%;
   display: flex;
@@ -167,6 +173,13 @@
   
 .found{
   display: flex;
+  width: 100%;
+}
+
+
+.foundWrapper{
+  
+  width: 45%;
 }
 
 .foundAside{
