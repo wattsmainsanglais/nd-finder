@@ -10,12 +10,12 @@ export interface UserProps {
     handlesetFoundPics: Function,
     isactive: imageArray,
     question: string,
- 
+    cancelQuestionDiv: Function
     
   }
 
 
-export default function Question({handlesetFoundPics ,isactive, question, }: UserProps){
+export default function Question({cancelQuestionDiv , handlesetFoundPics ,isactive, question, }: UserProps){
 
    
 
@@ -23,7 +23,8 @@ export default function Question({handlesetFoundPics ,isactive, question, }: Use
     let answerArray:string[] = isactive.answerlist;
 
     return(
-        <section className={`${styles.questionWrapper} ${indie.className}`}>
+       <> 
+         <section className={`${styles.questionWrapper} ${indie.className}`}>
             <h2>{question}</h2>
             
             <ul className={styles.answersList}>
@@ -33,9 +34,14 @@ export default function Question({handlesetFoundPics ,isactive, question, }: Use
                 
                 }
             </ul>
+           
+            
+         </section>
+         <section className={styles.questionBottomInfo}>
+                <h2 onClick={() => cancelQuestionDiv(isactive)}>Back</h2>
+
         </section>
-        
-        
+       </> 
     )
 }
 

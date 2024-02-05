@@ -28,3 +28,18 @@
     border: 4px #5B9240 solid;
     background-color: azure;
 }
+
+.questionBottomInfo{
+    width: 90%;
+    height: 100%;
+    padding-top: 5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.questionBottomInfo > h2:hover{
+    cursor: pointer;
+    font-weight: 800;
+    color: #5B9240;
+}

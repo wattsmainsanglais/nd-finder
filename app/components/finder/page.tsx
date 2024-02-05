@@ -66,12 +66,24 @@ const handlesetFoundPics = (item: string, array: imageArray) => {
     toggleQuestionDiv()
     toggleFindersArticle()
   } else {
+    setFoundPics([...foundPics, array]);
+    setClicked([]);
+    toggleQuestionDiv();
+    toggleFindersArticle();
     
     
-    return
+    
   }
 
 };
+
+const cancelQuestionDiv = (array: imageArray) => {
+  setClicked([]);
+  setflowerPics([...flowerPics, array])
+  toggleQuestionDiv();
+  toggleFindersArticle();
+
+}
 
 const reset = () => {
   setFoundPics([])
@@ -156,7 +168,7 @@ const reset = () => {
           <AnimatePresence>
             {showMeQuestion && (
 
-            <motion.div className={finderStyles.questionModal} style={{display: showMeQuestion?"flex":"none", minHeight: '400px', alignItems: 'center'}} 
+            <motion.div className={finderStyles.questionModal} style={{display: showMeQuestion?"flex":"none", minHeight: '400px'}} 
               key='modal'
               initial={{ x: 800, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -171,7 +183,7 @@ const reset = () => {
                     
                     <aside className={finderStyles.questionAside} key={index}>
 
-                      <Question handlesetFoundPics={handlesetFoundPics} isactive={clicked[0]} question={item.question} />
+                      <Question cancelQuestionDiv={cancelQuestionDiv}  handlesetFoundPics={handlesetFoundPics} isactive={clicked[0]} question={item.question} />
                     </aside>
                      
                   )
@@ -188,15 +200,16 @@ const reset = () => {
           <p>lets find some things</p>
         </article>
 
-      
-      </section>
-      <button onClick={reset}>reset</button>
-      <Link href='/'>Start</Link>
-
-      <section>
+        
           { flowerPics.length == 0 && clicked.length == 0 ? (
-            <Congratulations points={pointsTotal} />
-           
+            <motion.div className={finderStyles.questionModal} style={{minHeight: '400px'}}
+              initial={{x: -800}}
+              animate={{x: 0}}
+              exit={{x: -800}}
+              transition={{duration: 0.5}}
+              >
+              <Congratulations points={pointsTotal} />
+            </motion.div>
             
           ) :
           (
@@ -204,7 +217,15 @@ const reset = () => {
           )
              
           }
+        
+
+
+      
       </section>
+      <button onClick={reset}>reset</button>
+      <Link href='/'>Start</Link>
+
+      
      
     </>
   )
