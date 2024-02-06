@@ -1,6 +1,8 @@
 
 
 import React, { JSXElementConstructor } from 'react'
+import Image from 'next/image';
+import arrow from '../../../../public/images/icons8-arrow-100.png'
 
 import images, {imageArray} from '../flowerList'
 import styles from './question.module.css'
@@ -38,8 +40,14 @@ export default function Question({cancelQuestionDiv , handlesetFoundPics ,isacti
             
          </section>
          <section className={styles.questionBottomInfo}>
-                <h2 onClick={() => cancelQuestionDiv(isactive)}>Back</h2>
-
+                
+                <Image
+                src={arrow}
+                width={30}
+                height={30}
+                alt='Arrow icon provide by icons8.com' 
+                className={styles.questionBackArrow}
+                onClick={() => cancelQuestionDiv(isactive)}/>
         </section>
        </> 
     )
