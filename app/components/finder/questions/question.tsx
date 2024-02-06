@@ -45,8 +45,9 @@ export default function Question({cancelQuestionDiv , handlesetFoundPics ,isacti
                 src={arrow}
                 width={30}
                 height={30}
-                alt='Arrow icon provide by icons8.com' 
+                alt='Icon by icons8.com' 
                 className={styles.questionBackArrow}
+                title='Arrow icon provide by icons8.com'
                 onClick={() => cancelQuestionDiv(isactive)}/>
         </section>
        </> 

@@ -165,6 +165,18 @@ width: 100%;
 
 }
 
+.resetandRestartWrapper{
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rrIcon{
+  padding: 1%;
+  font-weight: 800;
+  color: #5B9240;
+}
+
 
 
 @media screen and (max-width: 480px) {

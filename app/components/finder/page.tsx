@@ -197,7 +197,7 @@ const reset = () => {
 
 
          
-          <p>lets find some things</p>
+          
         </article>
 
         
@@ -219,11 +219,14 @@ const reset = () => {
           }
         
 
-
+        <section className={finderStyles.resetandRestartWrapper}>
+          <button className={finderStyles.rrIcon} onClick={reset}>Reset Game</button>
+          <Link className={finderStyles.rrIcon} href='/'>Start Page</Link>
+        </section>
       
       </section>
-      <button onClick={reset}>reset</button>
-      <Link href='/'>Start</Link>
+      
+      
 
       
      
