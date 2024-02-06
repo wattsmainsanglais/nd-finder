@@ -123,7 +123,9 @@
 
 .flowerlistAside:hover{
   opacity: 85%;
-  border: 2px solid #5B9240;
+  box-shadow: 1px 0px 15px 4px #5B9240;
+    -webkit-box-shadow: 1px 0px 15px 4px #5B9240;
+    -moz-box-shadow: 1px 0px 15px 4px #5B9240;
   border-radius: 5px;
 }
 

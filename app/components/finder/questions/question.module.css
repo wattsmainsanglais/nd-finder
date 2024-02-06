@@ -25,7 +25,10 @@
 }
 
 .answerEntry:hover{
-    border: 4px #5B9240 solid;
+    box-shadow: 1px 0px 15px 4px #5B9240;
+    -webkit-box-shadow: 1px 0px 15px 4px #5B9240;
+    -moz-box-shadow: 1px 0px 15px 4px #5B9240;
+    
     background-color: azure;
 }
 
