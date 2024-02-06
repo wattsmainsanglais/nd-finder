@@ -18,15 +18,15 @@ import PgData from '../dataNdDatabase'
 export default function Finder(){
 
 
-const [flowerPics, setflowerPics] = React.useState(images)
-const [foundPics, setFoundPics] = React.useState<imageArray[]>([])
-const [clicked, setClicked] = React.useState<imageArray[]>([]) 
+const [flowerPics, setflowerPics] = React.useState(images) // state to manage the initial picture(element) array/ unfound items
+const [foundPics, setFoundPics] = React.useState<imageArray[]>([]) // state to manage elements which have been clicked on question answered
+const [clicked, setClicked] = React.useState<imageArray[]>([])  // state to manage element which has been clicked and now at question stage
 
 // Simple display states 
 const [showMeQuestion, setShowMeQuestion] = React.useState<boolean>(false);
 const [showMeFlowers, setShowMeFlowers] = React.useState<boolean>(true);
 
-// Points State
+// Points tally State, displayed in congratulations component
 const [pointsTotal, setPointsTotal] = React.useState<number>(0)
  
 
@@ -39,7 +39,7 @@ function toggleFindersArticle(){
   setShowMeFlowers(!showMeFlowers)
 }
 
-// click event
+// click event, removes element from flower pics and adds it to clicked state. updates view
 
 const onClickRemove = (item: any, index: number) => {
   toggleFindersArticle()
@@ -56,6 +56,7 @@ const onClickRemove = (item: any, index: number) => {
 }
 
 
+// removes element from clicked state into found state. updates views and pointTotal state 
 const handlesetFoundPics = (item: string, array: imageArray) => {
   
   if(clicked[0].answer == item){
@@ -77,6 +78,7 @@ const handlesetFoundPics = (item: string, array: imageArray) => {
 
 };
 
+// return to inital finders/ flowerpics view. Click on arrow in Question Modal
 const cancelQuestionDiv = (array: imageArray) => {
   setClicked([]);
   setflowerPics([...flowerPics, array])
@@ -85,6 +87,7 @@ const cancelQuestionDiv = (array: imageArray) => {
 
 }
 
+// resets games , when click 'Reset game' at bottom of page
 const reset = () => {
   setFoundPics([])
   setflowerPics(images)
