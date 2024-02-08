@@ -211,6 +211,10 @@ width: 100%;
 
 .finders{
   width: 100%;
+  min-height: 75vh;
+  padding-bottom: 1%;
+ 
+
 }
 
 .flowerlistAside{
