@@ -13,7 +13,7 @@ import Link from 'next/link'
 import {AnimatePresence, motion, useInView} from 'framer-motion'
 
 import { indie } from './layout'
-import PgData from '../dataNdDatabase'
+
 
 export default function Finder(){
 

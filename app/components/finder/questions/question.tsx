@@ -1,10 +1,10 @@
 
 
-import React, { JSXElementConstructor } from 'react'
+import React from 'react'
 import Image from 'next/image';
-import arrow from '../../../../public/images/icons8-arrow-100.png'
+import arrow from './icons8-arrow-100.png'
 
-import images, {imageArray} from '../flowerList'
+import {imageArray} from '../flowerList'
 import styles from './question.module.css'
 import { indie } from '../layout';
 
