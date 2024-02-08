@@ -13,6 +13,7 @@ import Link from 'next/link'
 import {AnimatePresence, motion, useInView} from 'framer-motion'
 
 import { indie } from './layout'
+import GoButton from '../buttons/GoButton'
 
 
 export default function Finder(){
@@ -223,8 +224,11 @@ const reset = () => {
         
 
         <section className={finderStyles.resetandRestartWrapper}>
-          <button className={finderStyles.rrIcon} onClick={reset}>Reset Game</button>
-          <Link className={finderStyles.rrIcon} href='/'>Start Page</Link>
+          
+          <aside className={finderStyles.rrIcon}> <GoButton text='Reset Game' reset={reset}/></aside>
+         
+          
+          <Link className={finderStyles.rrIcon} href='/'><GoButton text='Start Page'/></Link>
         </section>
       
       </section>
