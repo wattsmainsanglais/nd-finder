@@ -88,7 +88,7 @@
 
 .finders{
   width:60%;
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: #cdeebc;
   display: flex;
   flex-direction: column;
@@ -172,7 +172,7 @@ width: 100%;
 }
 
 .rrIcon{
-  padding: 1%;
+  padding: 1% 1% 1% 0;
   font-weight: 800;
   color: #5B9240;
 }
