@@ -8,7 +8,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
 
-module.exports =  nextConfig, {
+module.exports = nextConfig
+
+module.exports =  {
   
    eslint: {
       // Warning: This allows production builds to successfully complete even if
