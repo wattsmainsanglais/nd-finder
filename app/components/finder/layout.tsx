@@ -7,11 +7,9 @@ import style from './finder.module.css'
 import Image from 'next/image'
 import ndLogo from '../../../public/images/logomini.png'
 
-const inter = Inter({
-   weight: '800',
-   subsets: ['latin'] });
 
-export const indie = Indie_Flower({
+
+const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
   

@@ -2,7 +2,15 @@
 
 import React from 'react'
 import style from './congratulations.module.css'
-import { indie } from '../layout'
+import { Indie_Flower } from 'next/font/google'
+
+
+const indie = Indie_Flower({
+    weight: '400',
+    subsets: ['latin'],
+    
+  })
+
 
 export interface PointsProps {
     points: number

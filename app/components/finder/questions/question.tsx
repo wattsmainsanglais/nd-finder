@@ -6,7 +6,7 @@ import arrow from './icons8-arrow-100.png'
 
 import {imageArray} from '../flowerList'
 import styles from './question.module.css'
-import { indie } from '../layout';
+import { Indie_Flower } from 'next/font/google';
 
 export interface UserProps {
     handlesetFoundPics: Function,
@@ -15,6 +15,12 @@ export interface UserProps {
     cancelQuestionDiv: Function
     
   }
+
+  const indie = Indie_Flower({
+    weight: '400',
+    subsets: ['latin'],
+    
+  })
 
 
 export default function Question({cancelQuestionDiv , handlesetFoundPics ,isactive, question, }: UserProps){
