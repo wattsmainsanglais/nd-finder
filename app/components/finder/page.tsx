@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import styles from '../../css/styles.module.css'
+
 import finderStyles from './finder.module.css'
 import React, { JSXElementConstructor } from 'react'
 
@@ -11,9 +11,16 @@ import Congratulations from './congratualtions/congratulations'
 import Link from 'next/link'
 
 import {AnimatePresence, motion, useInView} from 'framer-motion'
+import { Indie_Flower } from 'next/font/google'
 
-import { indie } from './layout'
 import GoButton from '../buttons/GoButton'
+
+
+export const indie = Indie_Flower({
+  weight: '400',
+  subsets: ['latin'],
+  
+})
 
 
 export default function Finder(){
