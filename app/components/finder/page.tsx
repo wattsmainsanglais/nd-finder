@@ -14,7 +14,7 @@ import {AnimatePresence, motion, useInView} from 'framer-motion'
 import { Indie_Flower } from 'next/font/google'
 
 import GoButton from '../buttons/GoButton'
-
+import LoadingIcon from './loadingIcon'
 
 const indie = Indie_Flower({
   weight: '400',
@@ -156,6 +156,7 @@ const reset = () => {
               transition={{duration: .5}}
               >
               <Image 
+                placeholder='blur'
                 src={item.src}
                 alt={item.alt}
                 className={finderStyles.flowerhuntImage}
