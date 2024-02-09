@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Indie_Flower } from 'next/font/google'
+
 
 import './globals.css'
 
@@ -9,11 +9,7 @@ const inter = Inter({
    weight: '800',
    subsets: ['latin'] });
 
-export const indie = Indie_Flower({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-indie'
-})
+
 
 export const metadata: Metadata = {
   title: 'Nature Dopes - Flower Finder',
