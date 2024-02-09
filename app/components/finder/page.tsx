@@ -16,7 +16,7 @@ import { Indie_Flower } from 'next/font/google'
 import GoButton from '../buttons/GoButton'
 
 
-export const indie = Indie_Flower({
+const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
   
