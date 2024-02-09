@@ -15,7 +15,8 @@ export type imageArray ={
     style: {maxWidth: string, height: string }, 
     question: string, 
     answerlist: string[], 
-    answer: string
+    answer: string,
+    info?: string
 
 }
 
@@ -31,9 +32,10 @@ let images: imageArray[] = [
             maxWidth: '20%',
             height: 'auto',
             },
-        question: 'What Color are the petals?',
-        answerlist: ['Yellow', 'Green', 'Blue'],
-        answer: 'Yellow'    
+        question: 'The Flower has a long yellow spur at the back, do you know what this is called?',
+        answerlist: ['Calyx', 'Corolla', 'Horn'],
+        answer: 'Corolla',
+        info: 'The Corolla is "closed" meaning only very strong insects like bumblebees are strong enough to open it and access the pollen'    
         },
         {
         name: 'Lucerne',
@@ -45,10 +47,10 @@ let images: imageArray[] = [
             maxWidth: '20%',
             height: 'auto'
             },
-        question: 'What Color is the stamen?',
-        answerlist: ['Orange', 'Black', 'Green'],
+        question: 'Look at the flowers very closely, what can you see?',
+        answerlist: ['Small holes', 'Dark Spots', 'Dark Lines'],
       
-        answer: 'Black'        
+        answer: 'Dark Lines'        
         }  
         ,
         {
@@ -61,9 +63,9 @@ let images: imageArray[] = [
                 maxWidth: '20%',
                 height: 'auto'
                 }, 
-            question: 'Is the Stem?', 
-            answerlist: ['Hairy', 'Ridged', 'Square'],
-            answer: 'Square'          
+            question: 'Look closely at the Spotty stem, what color are the spots?', 
+            answerlist: ['Red', 'Black', 'Purple'],
+            answer: 'Purple'          
         }   
 
 

@@ -9,6 +9,11 @@
 
 }
 
+.questionWrapper > h2{
+    text-align: center;
+    padding: 5% 2% 0 2%;
+}
+
 .answersList{
     width: 80%;
     padding: 3%;
