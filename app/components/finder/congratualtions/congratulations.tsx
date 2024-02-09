@@ -1,3 +1,5 @@
+ /* eslint react/no-unescaped-entities */
+
 import React from 'react'
 import style from './congratulations.module.css'
 import { indie } from '../layout'
@@ -9,7 +11,7 @@ export interface PointsProps {
 export default function Congratulations({points}: PointsProps ){
 
     return(
-     <section className={`${style.congratulationsWrapper} ${indie.className} ` }>
+     <section className={`${style.congratulationsWrapper} ${indie.className}` }>
 
         <h1>Congratualtions!</h1>
         <h2>You've reached the end of the game</h2>
