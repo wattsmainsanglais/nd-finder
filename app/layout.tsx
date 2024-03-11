@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Providers } from './providers';
 
 
 import './globals.css'
@@ -24,13 +25,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+
         <nav>
           <section className={inter.className}>
             <a href='https://www.naturedopes.com'>Main Site</a>
           </section>
 
         </nav>
-        {children}
+        <Providers>
+            {children}
+        </Providers>
+      
       
       
       </body>

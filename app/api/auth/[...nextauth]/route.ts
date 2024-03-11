@@ -2,13 +2,13 @@ import NextAuth from "next-auth";
 
 import credentials from "next-auth/providers/credentials";
 
-const handler = NextAuth({
+export const authOptions = NextAuth({
     session: {
         strategy: 'jwt'
     },
     providers: [
         credentials({
-            name: 'Sign in',
+            name: 'Sign-in',
             credentials: {
                 email: {
                     label: 'Email',
@@ -30,5 +30,5 @@ const handler = NextAuth({
 })   
 
 
-
+const handler = authOptions
 export {handler as GET, handler as POST}
