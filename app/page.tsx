@@ -10,6 +10,9 @@ import GoButton from './components/buttons/GoButton'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
 
+import { LoginButton, LogoutButton } from './auth'
+
+
 const indie = Indie_Flower({
   weight: '400',
   subsets: ['latin'],
@@ -25,7 +28,8 @@ export default async function Page() {
    
   return(
     <main className={styles.rootPageWrapper}> 
-
+      {!session ? <LoginButton />:<LogoutButton /> }
+      
         <section className={`${indie.className} ${styles.logoWrapper} `}>
                 <aside >
                   <Image
@@ -50,7 +54,7 @@ export default async function Page() {
               
               
           
-        
+                  
         </section>
       
             
