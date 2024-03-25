@@ -48,7 +48,7 @@ export const authOptions = NextAuth({
                 }
 
                 return {
-                    id: user.id + '',
+                    id: user.id,
                     email: user.email,
                     name: user.username,
                     random: 'random ass string'
@@ -60,7 +60,7 @@ export const authOptions = NextAuth({
         })
     ],
     callbacks: {
-        session: ({session, token}) => {
+        /*session: ({session, token}) => {
             console.log('Session Callback', {session, token})
             return {
                 ...session,
@@ -72,8 +72,15 @@ export const authOptions = NextAuth({
                 }
             }
 
-        },
-        jwt: ({ token, user}) => {
+        },*/
+        async session({session, token}){
+            
+            session.user.id = await JSON.stringify(token.id)
+            
+            console.log('Session Callback', {session})
+            return session
+        }, 
+        /*jwt: ({ token, user}) => {
             console.log('JWT callback', {token, user})
             if(user){
                 const u = user as unknown as any
@@ -84,6 +91,18 @@ export const authOptions = NextAuth({
                 }
             }
             return token
+        }*/
+        async jwt({token, user}){
+            
+          if(user){
+              token.id = user.id
+                
+          }
+          
+            
+            console.log('JWT callback', {token})
+            return token
+            
         }
     }
 })   

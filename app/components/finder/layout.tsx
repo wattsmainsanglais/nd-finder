@@ -40,7 +40,7 @@ export default async function FinderLayout({
                 </aside>
                 <h2 className={style.navBarHeader}>Nature Dopes</h2>
                 </section>
-                <pre>{JSON.stringify(session.user)}</pre>   
+                {session ? <pre>{JSON.stringify(session, null, 2)}</pre>:<p>no current session</p> }   
             </header>
 
         {children}
